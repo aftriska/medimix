@@ -68,30 +68,29 @@
 
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<a href="<? echo base_url(); ?>index.php/registration">Sign Up?</a>
-<br/>
-Log In!
-<form action="<?echo base_url()?>index.php/user/login" method="post">
+	<p><a href="<? echo base_url(); ?>">Home</a></p>
+	<p>Sign Up Here!</p>
+	<br/>
+	<form>
 	<table>
-		<tr>
-			<td>Username</td>
-			<td>:</td>
-			<td><input type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_username'); ?></font></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td>:</td>
-			<td><input type="password" name="u_password" value=""/></td>
-			<td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
-		</tr>
-		<tr><td colspan="3"><input type="submit" name="submit" value="Login"/></td></tr>
+		<tr><td>Username</td><td>:</td><td><input type="text" name="u_username"/></td></tr>
+		<tr><td></td><td></td><td>maximum character: 50</td></tr>
+		<tr><td>Password</td><td>:</td><td><input type="password" name="u_password"/></td></tr>
+		<tr><td></td><td></td><td>maximum character: 20, must contain alphabet and number, must not contain special character</td></tr>
+		<tr><td>Re-type Password</td><td>:</td><td><input type="password" name="u_password"/></td></tr>
+		<tr><td>E-mail</td><td>:</td><td><input type="text" name="u_email"/></td></tr>
+		<tr><td>Birthdate</td><td>:</td><td><input type="text" name="u_birthdate"/></td></tr>
+		<tr><td>ID Number</td><td>:</td><td><input type="text" name="u_id_number"/></td></tr>
+		<tr><td>Address</td><td>:</td><td><input type="text" name="u_address"/></td></tr>
+		<tr><td>City</td><td>:</td><td><input type="text" name="u_city"/></td></tr>
+		<tr><td>Country</td><td>:</td><td><input type="text" name="u_country"/></td></tr>
+		<tr><td>Postcode</td><td>:</td><td><input type="text" name="u_postcode"/></td></tr>
+		<tr><td colspan="3">
+			<input type="submit" name="cancel" value="Submit"/>
+			<input type="submit" name="submit" value="Reset"/>
+			<input type="submit" name="submit" value="Cancel"/></td></tr>
 	</table>
 	</form>
-<br/>
-<? echo $app_msg; ?>
-<br/>
-<a href="<? echo base_url(); ?>index.php/forgot_password">Forgot Password?</a>
 </div>
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>

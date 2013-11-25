@@ -68,30 +68,9 @@
 
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<a href="<? echo base_url(); ?>index.php/registration">Sign Up?</a>
-<br/>
-Log In!
-<form action="<?echo base_url()?>index.php/user/login" method="post">
-	<table>
-		<tr>
-			<td>Username</td>
-			<td>:</td>
-			<td><input type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_username'); ?></font></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td>:</td>
-			<td><input type="password" name="u_password" value=""/></td>
-			<td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
-		</tr>
-		<tr><td colspan="3"><input type="submit" name="submit" value="Login"/></td></tr>
-	</table>
-	</form>
-<br/>
-<? echo $app_msg; ?>
-<br/>
-<a href="<? echo base_url(); ?>index.php/forgot_password">Forgot Password?</a>
+	<p><a href="<? echo base_url(); ?>index.php/user">Home</a> | <a href="<? echo base_url(); ?>index.php/user/logout">Log Out</a></p>
+	<p>This is the page for welcoming user. For premium user there will be menu for Data Management.</p>
+	<br/>
 </div>
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>
