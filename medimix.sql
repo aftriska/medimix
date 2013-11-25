@@ -134,6 +134,28 @@ CREATE TABLE `users` (
   PRIMARY KEY (`u_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='store user''s information' AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Update structure for table `users`
+--
+
+ALTER TABLE  `users` ADD  `u_username` VARCHAR( 50 ) NOT NULL ,
+ADD  `u_password` VARCHAR( 255 ) NOT NULL ,
+ADD  `u_email` VARCHAR( 200 ) NOT NULL ,
+ADD  `u_birthdate` DATE NOT NULL ,
+ADD  `u_id_number` VARCHAR( 50 ) NOT NULL ,
+ADD  `u_address` VARCHAR( 500 ) NOT NULL ,
+ADD  `u_city` VARCHAR( 100 ) NOT NULL ,
+ADD  `u_country` VARCHAR( 100 ) NOT NULL ,
+ADD  `u_postcode` VARCHAR( 6 ) NOT NULL ,
+ADD  `u_type` VARCHAR( 1 ) NOT NULL ,
+ADD UNIQUE (
+`u_username` ,
+`u_email` ,
+`u_id_number`
+);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
