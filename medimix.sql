@@ -135,7 +135,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='store user''s information' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
-
+-- @aftri
 --
 -- Update structure for table `users`
 --
@@ -154,6 +154,34 @@ ADD UNIQUE (
 `u_username` ,
 `u_email` ,
 `u_id_number`
+);
+
+-- --------------------------------------------------------
+-- @aftri
+--
+-- Add dummy data table `users`
+--
+
+INSERT INTO  `users` (
+`u_id` ,
+`u_dcreate` ,
+`u_ucreate` ,
+`u_dmodify` ,
+`u_umodify` ,
+`u_username` ,
+`u_password` ,
+`u_email` ,
+`u_birthdate` ,
+`u_id_number` ,
+`u_address` ,
+`u_city` ,
+`u_country` ,
+`u_postcode` ,
+`u_type`
+)
+VALUES (
+NULL , 
+CURRENT_TIMESTAMP ,  'aftri', NULL , NULL ,  'aftri',  '5f4dcc3b5aa765d61d8327deb882cf99',  'aftrimarriska@gmail.com',  '2013-11-01',  '1234567890',  'Karlskrona',  'Karlskrona',  'Sweden',  '12345',  '0'
 );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
