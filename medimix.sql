@@ -234,6 +234,14 @@ NULL ,
 CURRENT_TIMESTAMP ,  'aftri', NULL , NULL ,  'philip',  '5f4dcc3b5aa765d61d8327deb882cf99',  'philip_email',  '2013-11-01',  '1234567896',  'Karlskrona',  'Karlskrona',  'Sweden',  '12345',  '0'
 );
 
+-- --------------------------------------------------------
+-- @aftri
+--
+-- Update structure for table `suggestion`
+--
+
+ALTER TABLE  `suggestions` ADD  `d_id` INT NOT NULL ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
