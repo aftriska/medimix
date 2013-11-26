@@ -68,10 +68,10 @@
 
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<a href="<? echo base_url(); ?>index.php/registration">Sign Up?</a>
+<a href="<?php echo base_url(); ?>index.php/registration">Sign Up?</a>
 <br/>
 Log In!
-<form action="<?echo base_url()?>index.php/user/login" method="post">
+<form action="<?php echo base_url(); ?>index.php/user/login" method="post">
 	<table>
 		<tr>
 			<td>Username</td>
@@ -89,9 +89,9 @@ Log In!
 	</table>
 	</form>
 <br/>
-<? echo $app_msg; ?>
+<?php echo $app_msg; ?>
 <br/>
-<a href="<? echo base_url(); ?>index.php/forgot_password">Forgot Password?</a>
+<a href="<?php echo base_url(); ?>index.php/forgot_password">Forgot Password?</a>
 </div>
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>
