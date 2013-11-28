@@ -68,7 +68,7 @@
 
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-	<p><a href="<? echo base_url(); ?>">Home</a></p>
+	<p><a href="<?php echo base_url(); ?>index.php">Home</a></p>
 	<p>Sign Up Here!</p>
 	<br/>
 	<form>
