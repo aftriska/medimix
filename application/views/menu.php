@@ -1,0 +1,1 @@
+<p><a href="<?php echo base_url(); ?>index.php/user">Home</a> | <a href="<?php echo base_url(); ?>index.php/user/change_password">Change Password</a> | <a href="<?php echo base_url(); ?>index.php/user/edit_profile">Edit Profile</a> | <a href="<?php echo base_url(); ?>index.php/user/logout">Log Out</a></p>

@@ -32,6 +32,16 @@
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
 	}
+	
+	h2 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #93B7CD;
+		font-size: 16px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
 
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
@@ -89,9 +99,19 @@
                 }
             });
         <?php } ?>
+        <?php if(isset($success_msg)){ ?>
+            $("#success-message").dialog({
+                width: 400,
+                modal: true,
+                buttons: {
+                OK: function(){
+                    document.location = '<?php echo base_url(); ?>index.php/user';
+                }
+                }
+            });
+        <?php } ?>
     });
-	</script>
-	
+	</script>	
 </head>
 <body>
 <?php if(isset($error_msg)){ ?>
@@ -102,30 +122,33 @@
     </p>
     </div>
 <?php } ?>
+<?php if(isset($success_msg)){ ?>
+    <div id="success-message" title="System Output">
+    <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    <?php echo "<p>$success_msg</p>"; ?>
+    </p>
+    </div>
+<?php } ?>
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<a href="<?php echo base_url(); ?>index.php/registration">Sign Up?</a>
-<br/>
-Log In!
-<form action="<?php echo base_url(); ?>index.php/user/login" method="post">
-	<table>
-		<tr>
-			<td>Username</td>
-			<td>:</td>
-			<td><input type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_username'); ?></font></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td>:</td>
-			<td><input type="password" name="u_password"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
-		</tr>
-		<tr><td colspan="3"><input type="submit" name="submit" value="Login"/></td></tr>
-	</table>
-	</form>
-<br/>
-<a href="<?php echo base_url(); ?>index.php/user/forgot_password">Forgot Password?</a>
+	<p><a href="<?php echo base_url(); ?>index.php/user">Home</a></p>
+	<div>
+        <form action="<?php echo base_url(); ?>index.php/user/forgot_password" method="post">
+            <!-- as you can see, the action refers to the same page -->
+            <table cellpadding="1" cellspacing="1">
+				<tr><td colspan="4">&nbsp;</td></tr>
+				<tr>
+					<td style="width:80px;"><label for="u_email">e-Mail</label></td>
+					<td style="width:10px">:</td>
+					<td style="width:300px; text-align:left"><input type="text" style="width:270px" name="u_email" value="<?php echo set_value('u_email'); ?>"/></td>
+					<td style="text-align:left"><font color="#D22325"><?php echo form_error('u_email'); ?></font></td>
+				</tr>
+				<tr><td colspan="3">&nbsp;</td></tr>
+				<tr><td colspan="3" style="text-align:center;"><input style="width:150px" type="submit" name="save" value="Reset Password"></td></tr>
+            </table>
+        </form>
+    </div>
 </div>
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>

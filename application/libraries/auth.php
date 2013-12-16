@@ -9,7 +9,7 @@ class Auth {
 		$this->CI =& get_instance();
 
 		$this->CI->load->library('session');
-		//$this->CI->load->database();
+		$this->CI->load->database();
 		$this->CI->load->helper('url');
 	}
 
@@ -29,23 +29,35 @@ class Auth {
 		$password = $login[1];
 
 		// Query time
-		
+
         $this->CI->db->where('u_username', $username);
 		$this->CI->db->where('u_password', $password);
+		
 		$query = $this->CI->db->get('users');
+		
 		$user_data = $query;
-		$query->free_result();
+		
+		/*
+		echo '1';
+		echo '<br/>';
+		echo 'result row(s): '.$user_data->num_rows(); 
+		*/
+		
 		if ($user_data->num_rows() !== 0)
 		{
 			// Our user exists, set session.
 			$this->CI->session->set_userdata('logged_user', $username);
+			$query->free_result();
 			return TRUE;
 		}
 		else
 		{
 			// No existing user.
+			$query->free_result();
 			return FALSE;
 		}
+		
+		//return FALSE;
 	}
 
 	function redirect()

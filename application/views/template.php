@@ -32,6 +32,16 @@
 		margin: 0 0 14px 0;
 		padding: 14px 15px 10px 15px;
 	}
+	
+	h2 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #93B7CD;
+		font-size: 16px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
 
 	code {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
@@ -74,24 +84,7 @@
 	
 	<style type='text/css' media='all'>@import url('<?php echo base_url(); ?>css/demo_table_jui.css');</style>
 	<style type='text/css' media='all'>@import url('<?php echo base_url(); ?>css/demo_validation.css');</style>
-	<style type='text/css' media='all'>@import url('<?php echo base_url(); ?>css/TableTools.css');</style>
-	
-	<script>
-    $(function() {
-        <?php if(isset($error_msg)){ ?>
-            $("#error-message").dialog({
-                width: 400,
-                modal: true,
-                buttons: {
-                OK: function(){
-                    $(this).dialog('close');
-                }
-                }
-            });
-        <?php } ?>
-    });
-	</script>
-	
+	<style type='text/css' media='all'>@import url('<?php echo base_url(); ?>css/TableTools.css');</style>	
 </head>
 <body>
 <?php if(isset($error_msg)){ ?>
@@ -102,30 +95,18 @@
     </p>
     </div>
 <?php } ?>
+<?php if(isset($success_msg)){ ?>
+    <div id="success-message" title="System Output">
+    <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    <?php echo "<p>$success_msg</p>"; ?>
+    </p>
+    </div>
+<?php } ?>
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<a href="<?php echo base_url(); ?>index.php/registration">Sign Up?</a>
-<br/>
-Log In!
-<form action="<?php echo base_url(); ?>index.php/user/login" method="post">
-	<table>
-		<tr>
-			<td>Username</td>
-			<td>:</td>
-			<td><input type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_username'); ?></font></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td>:</td>
-			<td><input type="password" name="u_password"/></td>
-			<td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
-		</tr>
-		<tr><td colspan="3"><input type="submit" name="submit" value="Login"/></td></tr>
-	</table>
-	</form>
-<br/>
-<a href="<?php echo base_url(); ?>index.php/user/forgot_password">Forgot Password?</a>
+	<?php $this->load->view($menu); ?>
+	<?php $this->load->view($body); ?>
 </div>
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>

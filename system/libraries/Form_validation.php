@@ -1130,6 +1130,20 @@ class CI_Form_validation {
 	}
 
 	// --------------------------------------------------------------------
+	
+	/**
+	 * Alpha-name with spaces and single-quotes for names
+	 *
+	 * @access	public
+	 * @param	string
+	 * @return	bool
+	 */
+	public function alpha_name($str)
+	{
+		return ( ! preg_match("/^([-a-z0-9 '_-])+$/i", $str)) ? FALSE : TRUE;
+	}
+	
+	// --------------------------------------------------------------------
 
 	/**
 	 * Numeric

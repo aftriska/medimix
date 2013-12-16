@@ -19,8 +19,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['app_msg'] = '';
-		$this->load->vars($data);
+		$this->output->enable_profiler(TRUE);
 		$this->load->view('welcome_message');
 	}
 }
