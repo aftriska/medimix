@@ -242,6 +242,90 @@ CURRENT_TIMESTAMP ,  'aftri', NULL , NULL ,  'philip',  '5f4dcc3b5aa765d61d8327d
 
 ALTER TABLE  `suggestions` ADD  `d_id` INT NOT NULL ;
 
+-- --------------------------------------------------------
+-- @aftri 2013/12/16 10:51
+--
+-- Add first_name and last_name to table `users`
+-- Update data on table `users`
+-- Update structure for table `suggestion`
+-- Add data to table `suggestion`
+
+ALTER TABLE `users` ADD `u_gender` VARCHAR( 1 ) NOT NULL AFTER `u_birthdate` ;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_gender` = 'F' WHERE `users`.`u_id` =1;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_gender` = 'M' WHERE `users`.`u_id` =2;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_gender` = 'F' WHERE `users`.`u_id` =3;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_gender` = 'M' WHERE `users`.`u_id` =4;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_gender` = 'M' WHERE `users`.`u_id` =5;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_email` = 'aftri@gmail.com' WHERE `users`.`u_id` =1;
+
+ALTER TABLE `users` ADD `u_first_name` VARCHAR( 100 ) NOT NULL AFTER `u_password` ,
+ADD `u_last_name` VARCHAR( 100 ) NOT NULL AFTER `u_first_name` ;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_first_name` = 'aftri',
+`u_last_name` = 'marriska' WHERE `users`.`u_id` =1;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_first_name` = 'magnus',
+`u_last_name` = 'dannemyr' WHERE `users`.`u_id` =2;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_first_name` = 'tingting',
+`u_last_name` = 'liu' WHERE `users`.`u_id` =3;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_first_name` = 'emmanuel',
+`u_last_name` = 'perez' WHERE `users`.`u_id` =4;
+
+UPDATE `medimix`.`users` SET `u_dmodify` = NULL ,
+`u_first_name` = 'philip',
+`u_last_name` = 'opougen' WHERE `users`.`u_id` =5;
+
+DROP TABLE IF EXISTS `suggestions`;
+CREATE TABLE `suggestions` (
+  `su_id` int(11) NOT NULL AUTO_INCREMENT,
+  `su_dcreate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `su_ucreate` varchar(50) NOT NULL,
+  `su_dmodify` timestamp NULL DEFAULT NULL,
+  `su_umodify` varchar(50) DEFAULT NULL,
+  `disease` int(11) NOT NULL,
+  `side_effect` varchar(500) NOT NULL,
+  `suggestion` text NOT NULL,
+  PRIMARY KEY (`su_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='store user''s information' AUTO_INCREMENT=1 ;
+
+ALTER TABLE `suggestions` CHANGE `disease` `disease` VARCHAR( 200 ) NOT NULL ;
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_1', 'side_effect_1', 'suggestion_1_1');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_1', 'side_effect_2', 'suggestion_1_2');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_1', 'side_effect_3', 'suggestion_1_3');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_2', 'side_effect_1', 'suggestion_2_1');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_2', 'side_effect_2', 'suggestion_2_2');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_2', 'side_effect_3', 'suggestion_2_3');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_3', 'side_effect_1', 'suggestion_3_1');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_3', 'side_effect_2', 'suggestion_3_2');
+
+INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_3', 'side_effect_3', 'suggestion_3_3');
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
