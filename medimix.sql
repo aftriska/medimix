@@ -326,6 +326,53 @@ INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dm
 
 INSERT INTO `medimix`.`suggestions` (`su_id`, `su_dcreate`, `su_ucreate`, `su_dmodify`, `su_umodify`, `disease`, `side_effect`, `suggestion`) VALUES (NULL, CURRENT_TIMESTAMP, 'medimix_trial', NULL, NULL, 'disease_3', 'side_effect_3', 'suggestion_3_3');
 
+-- --------------------------------------------------------
+-- @aftri 2014/01/13 18:35
+--
+-- Update database for iteration 2
+
+ALTER TABLE `diseases` ADD `d_name` TEXT NOT NULL ,
+ADD `d_symptom` TEXT NOT NULL ;
+
+ALTER TABLE `patient_diseases` ADD `u_id` INT NOT NULL ,
+ADD `d_id` INT NOT NULL ,
+ADD `pu_diagnose_date` DATE NOT NULL ,
+ADD `pu_recover_date` DATE NULL ;
+
+INSERT INTO `medimix`.`diseases` (`d_id`, `d_dcreate`, `d_ucreate`, `d_dmodify`, `d_umodify`, `d_name`, `d_symptom`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1’);
+
+INSERT INTO `medimix`.`diseases` (`d_id`, `d_dcreate`, `d_ucreate`, `d_dmodify`, `d_umodify`, `d_name`, `d_symptom`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 3', 'symptom for disease 3'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 4', 'symptom for disease 4');
+
+ALTER TABLE `medicines` ADD `m_name` TEXT NOT NULL ,
+ADD `m_description` TEXT NOT NULL ;
+
+ALTER TABLE `disease_medicines` ADD `u_id` INT NOT NULL ,
+ADD `d_id` INT NOT NULL ,
+ADD `m_id` INT NOT NULL ,
+ADD `dm_prescribed` VARCHAR( 1 ) NOT NULL ,
+ADD `dm_dose` TEXT NOT NULL ,
+ADD `dm_start_using` DATE NOT NULL ,
+ADD `dm_finish_using` DATE NOT NULL ;
+
+INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 1', 'description of medicine 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 2', 'description of medicine 2’);
+
+INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 3', 'description of medicine 3'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 4', 'description of medicine 4’);
+
+ALTER TABLE `sideeffects` ADD `se_name` TEXT NOT NULL ,
+ADD `se_description` TEXT NOT NULL ;
+
+ALTER TABLE `sideeffects` CHANGE `si_dcreate` `se_dcreate` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ;
+
+ALTER TABLE `sideeffects` ADD `u_id` INT NOT NULL AFTER `se_umodify` ;
+
+ALTER TABLE `disease_medicines` ADD `deleted_by_user` VARCHAR( 1 ) NOT NULL ;
+
+ALTER TABLE `patient_diseases` ADD `deleted_by_user` VARCHAR( 1 ) NOT NULL ;
+
+ALTER TABLE `sideeffects` ADD `deleted_by_user` VARCHAR( 1 ) NOT NULL ;
+
+-- ============= update end =============
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
