@@ -52,7 +52,7 @@ class User extends CI_Controller {
 		$this->output->enable_profiler(TRUE);
 		$this->auth->restrict(TRUE);
 
-		$this->form_validation->set_rules('u_username', 'Username', 'required|trim|xss_clean');
+		$this->form_validation->set_rules('u_username', 'Username', 'required|trim|xss_clean|alpha_numeric');
 		$this->form_validation->set_rules('u_password', 'Password', 'required|xss_clean|trim|md5|alpha_numeric');
 		$this->form_validation->set_message('required', 'Required');
 
