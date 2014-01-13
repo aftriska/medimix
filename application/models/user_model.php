@@ -94,6 +94,16 @@ class User_model extends CI_Model {
         $query = $this->db->query($sql);
         return $query;
     }
+    
+    function get_user_type($u_username)
+    {
+    	$sql = "SELECT u_type FROM USERS WHERE u_username='$u_username'";
+        $query = $this->db->query($sql);
+        //$data = $query;
+        //$query->free_result();
+        //return $data;
+        return $query;
+    }
 }
 
 /* End of file user_model.php */

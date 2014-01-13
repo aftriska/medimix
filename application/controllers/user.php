@@ -10,6 +10,7 @@ class User extends CI_Controller {
 
         $user = $this->session->userdata('logged_user');
         $data['user'] = $user;
+        $data['utype'] = $this->user_model->get_user_type($user);
         
         /* 
         	-- get user privilege to check whether he/she is a free/premium user
@@ -103,6 +104,7 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 
 		$user = $this->session->userdata('logged_user');
+		$data['utype'] = $this->user_model->get_user_type($user);
 		
 		$this->form_validation->set_rules('cur_password', 'Current Password', 'trim|required|md5|xss_clean');
 		$this->form_validation->set_rules('new_password', 'New Password', 'trim|required|xss_clean|alpha_numeric|min_length[6]|max_length[20]|md5');
@@ -228,6 +230,7 @@ class User extends CI_Controller {
 		$this->load->helper('mm_string_helper');
 		
 		$data['user'] = $this->session->userdata('logged_user');
+		$data['utype'] = $this->user_model->get_user_type($data['user']);		
 		
 		$data['user_data'] = $this->user_model->get_user_data($data['user']);
 		
@@ -313,7 +316,55 @@ class User extends CI_Controller {
 		$this->load->vars($data);
 		$this->load->view('template');
 	}
+	
+	function upgrade_account()
+	{
+		$this->output->enable_profiler(TRUE);
+		$this->auth->restrict();
+		$this->load->model('user_model');
+		
+		$data['user'] = $this->session->userdata('logged_user');
+		
+		//get user_type, if premium user, cannot access this page anymore.
+		$user_type = $this->user_model->get_user_type($data['user']);
+		
+		if($user_type->row()->u_type === '1')
+		{
+			redirect('/user');
+		}
+		
+		if($this->input->post('save_btn'))
+		{
+			$u_umodify	  = $data['user'];
+			$this->db->trans_begin();
+			
+			$sql = "UPDATE USERS SET
+					u_umodify='$u_umodify',
+					u_dmodify=now(),
+					u_type='1'
+					WHERE u_username='$u_umodify'";
+			
+			$this->db->query($sql);			
+		
+			if ($this->db->trans_status() === FALSE)
+			{
+				$this->db->trans_rollback();
+				$data['error_msg'] = "Cannot Store Data, Please Try Again.";
+			}
+			else
+			{
+				$this->db->trans_commit();
+				$data['success_msg'] = "Your have upgraded to Premium User.";
+			}
+		}
+		
+		$data['menu'] = 'menu';
+		$data['body'] = 'upgrade_account';
+		$this->load->vars($data);
+		$this->load->view('template');
+	}
 }
+
 
 /* End of file user.php */
 /* Location: ./application/controllers/user.php */

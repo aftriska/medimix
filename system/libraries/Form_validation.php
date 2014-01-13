@@ -1140,11 +1140,25 @@ class CI_Form_validation {
 	 */
 	public function alpha_name($str)
 	{
-		return ( ! preg_match("/^([-a-z0-9 '_-])+$/i", $str)) ? FALSE : TRUE;
+		return ( ! preg_match("/^([-a-z0-9- '_-])+$/i", $str)) ? FALSE : TRUE;
 	}
 	
 	// --------------------------------------------------------------------
+	
+	/**
+	 * Swed-alpha with possible alphabet characters
+	 *
+	 * @access	public
+	 * @param	string
+	 * @return	bool
+	 */
+	public function swed_alpha($str)
+	{
+		$str = (strtolower($this->CI->config->item('charset')) != 'utf-8') ? utf8_encode($str) : $str;
 
+        return ( ! preg_match("/^[[:alpha:]- ÀÁÂÃÄÅĀĄĂÆÇĆČĈĊĎĐÈÉÊËĒĘĚĔĖĜĞĠĢĤĦÌÍÎÏĪĨĬĮİĲĴĶŁĽĹĻĿÑŃŇŅŊÒÓÔÕÖØŌŐŎŒŔŘŖŚŠŞŜȘŤŢŦȚÙÚÛÜŪŮŰŬŨŲŴÝŶŸŹŽŻàáâãäåæçèéêëìíîïñòóôõöøùúûüýÿœšß _.]+$/", $str)) ? FALSE : TRUE;
+	}
+	
 	/**
 	 * Numeric
 	 *

@@ -131,11 +131,7 @@
 <?php } ?>
 <h1>Welcome to MediMix!</h1>
 <div id="body">
-<<<<<<< HEAD
-	<p><a href="<?php echo base_url(); ?>">Home</a></p>
-=======
-	<p><a href="<?php echo base_url(); ?>index.php">Home</a></p>
->>>>>>> 0aef6779a0cfed93a6762b7cd4f6e1a23231f9d5
+<p><a href="<?php echo base_url(); ?>index.php">Home</a></p>
 	<p>Sign Up Here!</p>
 	<br/>
 	<form action="<?php echo base_url(); ?>index.php/registration" method="post">
