@@ -326,9 +326,9 @@ class User extends CI_Controller {
 		$data['user'] = $this->session->userdata('logged_user');
 		
 		//get user_type, if premium user, cannot access this page anymore.
-		$user_type = $this->user_model->get_user_type($data['user']);
+		$data['utype'] = $this->user_model->get_user_type($data['user']);
 		
-		if($user_type->row()->u_type === '1')
+		if($data['utype']->row()->u_type === '1')
 		{
 			redirect('/user');
 		}
