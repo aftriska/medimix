@@ -339,7 +339,7 @@ ADD `d_id` INT NOT NULL ,
 ADD `pu_diagnose_date` DATE NOT NULL ,
 ADD `pu_recover_date` DATE NULL ;
 
-INSERT INTO `medimix`.`diseases` (`d_id`, `d_dcreate`, `d_ucreate`, `d_dmodify`, `d_umodify`, `d_name`, `d_symptom`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1’);
+INSERT INTO `medimix`.`diseases` (`d_id`, `d_dcreate`, `d_ucreate`, `d_dmodify`, `d_umodify`, `d_name`, `d_symptom`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 1', 'symptom for disease 1');
 
 INSERT INTO `medimix`.`diseases` (`d_id`, `d_dcreate`, `d_ucreate`, `d_dmodify`, `d_umodify`, `d_name`, `d_symptom`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 3', 'symptom for disease 3'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'disease 4', 'symptom for disease 4');
 
@@ -354,9 +354,9 @@ ADD `dm_dose` TEXT NOT NULL ,
 ADD `dm_start_using` DATE NOT NULL ,
 ADD `dm_finish_using` DATE NOT NULL ;
 
-INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 1', 'description of medicine 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 2', 'description of medicine 2’);
+INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 1', 'description of medicine 1'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 2','description of medicine 2');
 
-INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 3', 'description of medicine 3'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 4', 'description of medicine 4’);
+INSERT INTO `medimix`.`medicines` (`m_id`, `m_dcreate`, `m_ucreate`, `m_dmodify`, `m_umodify`, `m_name`, `m_description`) VALUES (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 3', 'description of medicine 3'), (NULL, CURRENT_TIMESTAMP, 'system', NULL, NULL, 'medicine 4', 'description of medicine 4');
 
 ALTER TABLE `sideeffects` ADD `se_name` TEXT NOT NULL ,
 ADD `se_description` TEXT NOT NULL ;
