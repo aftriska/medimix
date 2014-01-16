@@ -1,4 +1,11 @@
-<p>This is the page for welcoming user. For premium user there will be menu for Data Management.</p>
+<div class="container">
+<div class="jumbotron">
+
+
+      <div class="page-header">
+        <h1>Welcome</h1>
+        <p class="lead">This the page page shows the information for the normal user. For premium user there will be menu for Data Management.</p>
+      </div>
 
 <table>
 	<tr>
@@ -10,7 +17,7 @@
 			foreach($diseases->result() as $disease): ?>
 			<form action="<?php echo base_url(); ?>index.php/user" method="post">
 			<input type="hidden" name="disease" value="<?php echo $disease->disease; ?>"/>
-			<p><input type="submit" name="get_se_btn" value="<?php echo $disease->disease; ?>"/></p>
+			<p><input class="btn btn-primary btn-lg" type="submit" name="get_se_btn" value="<?php echo $disease->disease; ?>"/></p>
 			</form>
 			<?php endforeach; } ?>
 		</td>
@@ -25,7 +32,7 @@
 			<form action="<?php echo base_url(); ?>index.php/user" method="post">
 			<input type="hidden" name="disease" value="<?php echo $se_disease; ?>"/>
 			<input type="hidden" name="side_effect" value="<?php echo $side_effect->side_effect; ?>"/>
-			<p><input type="submit" name="get_sg_btn" value="<?php echo $side_effect->side_effect; ?>"/></p>
+			<p><input class="btn btn-primary btn-lg" type="submit" name="get_sg_btn" value="<?php echo $side_effect->side_effect; ?>"/></p>
 			</form>
 			<?php endforeach; } ?>
 		</td>
@@ -42,4 +49,9 @@
 		</td>
 	</tr>
 </table>
+  
+  </div>
+
+  </div> <!-- /container -->
+
 

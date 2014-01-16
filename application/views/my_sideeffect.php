@@ -1,3 +1,5 @@
+<div class="container">
+
 <script>
 $(function() {
 	<?php if(isset($error_msg)){ ?>
@@ -24,7 +26,11 @@ $(function() {
 	<?php } ?>
 });
 </script>
+ <div class="page-header">
+
 <h2>Reported Side Effect</h2>
+      </div>
+
 <table cellpadding='7' cellspacing='0' border='1'>
 	<tr><th>Reported Date/Time</th><th>Side Effect</th><th>Description</th><th>Edit</th><th>Delete</th></tr>
 	<?php foreach($ses->result() as $se): ?>
@@ -35,13 +41,13 @@ $(function() {
 		<td>
 		<form action="<?php echo base_url(); ?>index.php/my_sideeffect/edit" method="post">
 			<input type="hidden" name="se_id" value="<?php echo $se->se_id; ?>" />
-			<input type="submit" name="edit_btn" value="Go">
+			<input class="btn btn-default btn active" type="submit" name="edit_btn" value="Go">
 		</form>
 		</td>
 		<td>
 		<form action="<?php echo base_url(); ?>index.php/my_sideeffect/delete" method="post">
 			<input type="hidden" name="se_id" value="<?php echo $se->se_id; ?>" />
-			<input type="submit" name="del_btn" value="Go">
+			<input class="btn btn-default btn active"type="submit" name="del_btn" value="Go">
 		</form>
 		</td>
 	</tr>
@@ -66,8 +72,9 @@ $(function() {
 	</tr>
 	<tr><td colspan="4">&nbsp;</td></tr>
 	<tr>
-		<td colspan="3"><input style="width:100px" type="submit" name="save_btn" value="Save"></td>
+		<td colspan="3"><input class="btn btn-success" style="width:100px" type="submit" name="save_btn" value="Save"></td>
 		<td></td>
 	</tr>
 </table>
 </form>
+    </div>

@@ -1,68 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>MediMix</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>dist/Img/favico.png">
 
-	<style type="text/css">
+    <title>MEDIMIX</title>
 
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+    <!-- Bootstrap  CSS -->
+    <link href="<?php echo base_url(); ?>dist/css/bootstrap.css" rel="stylesheet">
 	
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-1.8.3.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui-1.9.2.custom.js"></script>
@@ -113,6 +63,36 @@
 	</script>
 </head>
 <body>
+
+<div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="<?php echo base_url(); ?>">Medimix</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="<?php echo base_url(); ?>index.php">Home</a></li>
+                 <li class="active"><a href="#about">About</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
 <?php if(isset($error_msg)){ ?>
     <div id="error-message" title="System Output">
     <p>
@@ -129,17 +109,18 @@
     </p>
     </div>
 <?php } ?>
-<h1>Welcome to MediMix!</h1>
-<div id="body">
-<p><a href="<?php echo base_url(); ?>index.php">Home</a></p>
-	<p>Sign Up Here!</p>
+      <div class="container">
+
+ 
+	<h2> Sign Up Here!</h2>
 	<br/>
+
 	<form action="<?php echo base_url(); ?>index.php/registration" method="post">
 	<table>
 		<tr>
 			<td>Username</td>
 			<td>:</td>
-			<td><input type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
+			<td><input  class="form-control" type="text" name="u_username" value="<?php echo set_value('u_username'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_username'); ?></font></td>
 		</tr>
 		<tr>
@@ -150,7 +131,7 @@
 		<tr>
 			<td>Password</td>
 			<td>:</td>
-			<td><input type="password" name="u_password" value=""/></td>
+			<td><input class="form-control" type="password" name="u_password" value=""/></td>
 			<td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
 		</tr>
 		<tr>
@@ -161,38 +142,38 @@
 		<tr>
 			<td>Re-type Password</td>
 			<td>:</td>
-			<td><input type="password" name="retype_password" value=""/></td>
+			<td><input class="form-control" class="form-control" type="password" name="retype_password" value=""/></td>
 			<td><font color="#D22325"><?php echo form_error('retype_password'); ?></font></td>
 		</tr>
 		<tr>
 			<td>First Name</td>
 			<td>:</td>
-			<td><input type="text" name="u_first_name" value="<?php echo set_value('u_first_name'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_first_name" value="<?php echo set_value('u_first_name'); ?>"/></td>
 			<td><font color="#D22325"> <?php echo form_error('u_first_name'); ?></font></td>
 		</tr>
 		<tr>
 			<td>Last Name</td>
 			<td>:</td>
-			<td><input type="text" name="u_last_name" value="<?php echo set_value('u_last_name'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_last_name" value="<?php echo set_value('u_last_name'); ?>"/></td>
 			<td><font color="#D22325"> <?php echo form_error('u_last_name'); ?></font></td>
 		</tr>
 		<tr>
 			<td>E-mail</td>
 			<td>:</td>
-			<td><input type="text" name="u_email" value="<?php echo set_value('u_email'); ?>"/></td>
+			<td><input class="form-control"  type="text" name="u_email" value="<?php echo set_value('u_email'); ?>"/></td>
 			<td><font color="#D22325"> <?php echo form_error('u_email'); ?></font></td>
 		</tr>
 		<tr>
 			<td>Birthdate</td>
 			<td>:</td>
-			<td><input type="text" name="u_birthdate" id="birthdate" readonly="true" value="<?php echo set_value('u_birthdate'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_birthdate" id="birthdate" readonly="true" value="<?php echo set_value('u_birthdate'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_birthdate'); ?></font></td>
 		</tr>
 		<tr>
 			<td>Gender</td>
 			<td>:</td>
 			<td>
-				<select title="- Choose Gender -" name="u_gender" style='width:200px'>
+				<select class="form-control" title="- Choose Gender -" name="u_gender" style='width:200px'>
 				<option value="">- Choose -</option>
 				<option value="M" <?php echo set_select('u_gender','M'); ?>>Male</option>
 				<option value="F" <?php echo set_select('u_gender','F'); ?>>Female</option>
@@ -203,43 +184,45 @@
 		<tr>
 			<td>ID Number</td>
 			<td>:</td>
-			<td><input type="text" name="u_id_number" value="<?php echo set_value('u_id_number'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_id_number" value="<?php echo set_value('u_id_number'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_id_number'); ?></font></td>
 		</tr>
 		<tr>
 			<td>Address</td>
 			<td>:</td>
-			<td><input type="text" name="u_address" value="<?php echo set_value('u_address'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_address" value="<?php echo set_value('u_address'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_address'); ?></font></td>
 		</tr>
 		<tr>
 			<td>City</td>
 			<td>:</td>
-			<td><input type="text" name="u_city" value="<?php echo set_value('u_city'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_city" value="<?php echo set_value('u_city'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_city'); ?></font></td>
 		</tr>
 		<tr>
 			<td>Country</td>
 			<td>:</td>
-			<td><input type="text" name="u_country" value="<?php echo set_value('u_country'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_country" value="<?php echo set_value('u_country'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_country'); ?></font></td></tr>
 		<tr>
 			<td>Postcode</td>
 			<td>:</td>
-			<td><input type="text" name="u_postcode" value="<?php echo set_value('u_postcode'); ?>"/></td>
+			<td><input class="form-control" type="text" name="u_postcode" value="<?php echo set_value('u_postcode'); ?>"/></td>
 			<td><font color="#D22325"><?php echo form_error('u_postcode'); ?></font></td>
 		</tr>
 		<tr>
 			<td colspan="3">
-				<input type="submit" name="save_btn" value="Submit"/>
-				<input type="submit" name="reset_btn" value="Reset"/>
-				<input type="submit" name="cancel_btn" value="Cancel"/>
+				<input class="btn btn-success" type="submit" name="save_btn" value="Submit"/>
+				<input class="btn btn-warning"type="submit" name="reset_btn" value="Reset"/>
+				<input class="btn btn-danger"type="submit" name="cancel_btn" value="Cancel"/>
 			</td>
 			<td></td>
 		</tr>
 	</table>
 	</form>
-</div>
+		      </div>
+
+
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </body>
 </html>

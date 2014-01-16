@@ -1,3 +1,5 @@
+<div class="container">
+
 <script>
 $(function() {
 	<?php if(isset($error_msg)){ ?>
@@ -24,8 +26,11 @@ $(function() {
 	<?php } ?>
 });
 </script>
+ <div class="page-header">
 
 <h2>Edit Side Effect</h2>
+      </div>
+
 <form action="<?php echo base_url(); ?>index.php/my_sideeffect/edit" method="post">
 <table cellpadding="1" cellspacing="1">
 	<tr><td colspan="4">&nbsp;</td></tr>
@@ -54,9 +59,10 @@ $(function() {
 	<tr>
 		<td colspan="3">
 			<input type="hidden" name="se_id" value="<?php echo $se_id; ?>" />
-			<input style="width:100px" type="submit" name="save_btn" value="Save">
+			<input class="btn btn-success"  style="width:100px" type="submit" name="save_btn" value="Save">
 		</td>
 		<td></td>
 	</tr>
 </table>
 </form>
+      </div>

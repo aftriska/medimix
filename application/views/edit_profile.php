@@ -1,3 +1,6 @@
+<div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
 <script>
     $(function() {        
         $( "#birthdate" ).datepicker({
@@ -31,8 +34,13 @@
         <?php } ?>
     });
 </script>
-	
+
+ <div class="page-header">
+
 <h2>Edit Profile</h2>
+
+      </div>
+
 <form action="<?php echo base_url(); ?>index.php/user/edit_profile" method="post">
 <table>
 	<tr>
@@ -44,7 +52,7 @@
 	<tr>
 		<td>First Name</td>
 		<td>:</td>
-		<td><input type="text" name="u_first_name" value="<?php if(!$validation)
+		<td><input type="text" class="form-control" name="u_first_name" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_first_name; }
 							else
 							{ echo set_value('u_first_name'); } ?>"/></td>
@@ -53,7 +61,7 @@
 	<tr>
 		<td>Last Name</td>
 		<td>:</td>
-		<td><input type="text" name="u_last_name" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_last_name" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_last_name; }
 							else
 							{ echo set_value('u_last_name'); } ?>"/></td>
@@ -62,7 +70,7 @@
 	<tr>
 		<td>E-mail</td>
 		<td>:</td>
-		<td><input type="text" name="u_email" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_email" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_email; }
 							else
 							{ echo set_value('u_email'); } ?>"/></td>
@@ -71,7 +79,7 @@
 	<tr>
 		<td>Birthdate</td>
 		<td>:</td>
-		<td><input type="text" name="u_birthdate" id="birthdate" readonly="true" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_birthdate" id="birthdate" readonly="true" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_birthdate; }
 							else
 							{ echo set_value('u_birthdate'); } ?>"/></td>
@@ -81,7 +89,7 @@
 		<td>Gender</td>
 		<td>:</td>
 		<td>
-			<select title="- Choose Gender -" name="u_gender" style='width:200px'>
+			<select class="form-control" title="- Choose Gender -" name="u_gender" style='width:200px'>
 			<option value="">- Choose -</option>
 			<?php if($user_data->row()->u_gender === 'M')  { ?>
 			<option value="M" selected <?php echo set_select('u_gender','M'); ?>>Male</option>
@@ -102,7 +110,7 @@
 	<tr>
 		<td>ID Number</td>
 		<td>:</td>
-		<td><input type="text" name="u_id_number" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_id_number" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_id_number; }
 							else
 							{ echo set_value('u_id_number'); } ?>"/></td>
@@ -111,7 +119,7 @@
 	<tr>
 		<td>Address</td>
 		<td>:</td>
-		<td><input type="text" name="u_address" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_address" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_address; }
 							else
 							{ echo set_value('u_address'); } ?>"/></td>
@@ -120,7 +128,7 @@
 	<tr>
 		<td>City</td>
 		<td>:</td>
-		<td><input type="text" name="u_city" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_city" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_city; }
 							else
 							{ echo set_value('u_city'); } ?>"/></td>
@@ -129,7 +137,7 @@
 	<tr>
 		<td>Country</td>
 		<td>:</td>
-		<td><input type="text" name="u_country" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_country" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_country; }
 							else
 							{ echo set_value('u_country'); } ?>"/></td>
@@ -137,7 +145,7 @@
 	<tr>
 		<td>Postcode</td>
 		<td>:</td>
-		<td><input type="text" name="u_postcode" value="<?php if(!$validation)
+		<td><input class="form-control" type="text" name="u_postcode" value="<?php if(!$validation)
 							{ echo $user_data->row()->u_postcode; }
 							else
 							{ echo set_value('u_postcode'); } ?>"/></td>
@@ -145,10 +153,13 @@
 	</tr>
 	<tr>
 		<td colspan="3">
-			<input type="submit" name="save_btn" value="Submit"/>
-			<input type="submit" name="cancel_btn" value="Cancel"/>
+			<input class="btn btn-success" type="submit" name="save_btn" value="Submit"/>
+			<input class="btn btn-danger" type="submit" name="cancel_btn" value="Cancel"/>
 		</td>
 		<td></td>
 	</tr>
 </table>
 </form>
+</div>
+
+

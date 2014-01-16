@@ -62,7 +62,7 @@
 
     <!-- The menu-bar -->
 
-    <div class="navbar-wrapper">
+    <div class="navbar-wrapper" role="navigation">
       <div class="container">
 
         <div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -99,12 +99,20 @@
                         <input type="password" class="form-control" name="u_password" value="" placeholder="User password"/>
                         <td><font color="#D22325"><?php echo form_error('u_password'); ?></font></td>
   </div>
+  
+   <tr><td colspan="3"><input class="btn btn-default" type="submit" name="submit" value="Sign in" /></td></tr>  
   <div class="checkbox">
     <label>
       <input type="checkbox"> Remember me
+
+      <a href="<?php echo base_url(); ?>index.php/user/forgot_password" >Forgott password?</a>
+
+
+
+
+
     </label>
   </div>
-                <tr><td colspan="3"><input class="btn btn-default" type="submit" name="submit" value="Sign in" /></td></tr>
 </form>
               </ul>
             </div>

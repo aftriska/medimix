@@ -1,3 +1,5 @@
+<div class="container">
+
 <script>
 $(function() {
 	<?php if(isset($error_msg)){ ?>
@@ -24,7 +26,11 @@ $(function() {
 	<?php } ?>
 });
 </script>
+ <div class="page-header">
+
 <h2>Delete Recorded Medication</h2>
+      </div>
+
 <p>Are you sure you want to delete this data?</p>
 <table cellpadding="1" cellspacing="1">
 	<tr>
@@ -66,6 +72,11 @@ $(function() {
 
 <form action="<?php echo base_url(); ?>index.php/my_medication/delete" method="post">
 <input type="hidden" name="dm_id" value="<?php echo $dm_id; ?>" />
-<input type="submit" name="delete_btn" value="Yes"/>
-<input type="submit" name="cancel_btn" value="No"/>
+<input class="btn btn-danger" type="submit" name="delete_btn" value="Yes"/>
+<input class="btn btn-default" type="submit" name="cancel_btn" value="No"/>
 </form>
+   </form>
+ 
+    </div>
+
+

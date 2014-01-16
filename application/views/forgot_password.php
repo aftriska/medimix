@@ -1,78 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>MediMix</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>dist/Img/favico.png">
 
-	<style type="text/css">
+    <title>MEDIMIX</title>
 
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-	
-	h2 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #93B7CD;
-		font-size: 16px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+    <!-- Bootstrap  CSS -->
+    <link href="<?php echo base_url(); ?>dist/css/bootstrap.css" rel="stylesheet">
 	
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-1.8.3.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui-1.9.2.custom.js"></script>
@@ -114,6 +54,32 @@
 	</script>	
 </head>
 <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="<?php echo base_url(); ?>">Medimix</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="<?php echo base_url(); ?>index.php">Home</a></li>
+                 <li class="active"><a href="#about">About</a></li>
+                <li><a href="<?php echo base_url(); ?>index.php/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
 <?php if(isset($error_msg)){ ?>
     <div id="error-message" title="System Output">
     <p>
@@ -130,9 +96,8 @@
     </p>
     </div>
 <?php } ?>
-<h1>Welcome to MediMix!</h1>
+      <div class="container">
 <div id="body">
-	<p><a href="<?php echo base_url(); ?>index.php/user">Home</a></p>
 	<div>
         <form action="<?php echo base_url(); ?>index.php/user/forgot_password" method="post">
             <!-- as you can see, the action refers to the same page -->
@@ -141,15 +106,17 @@
 				<tr>
 					<td style="width:80px;"><label for="u_email">e-Mail</label></td>
 					<td style="width:10px">:</td>
-					<td style="width:300px; text-align:left"><input type="text" style="width:270px" name="u_email" value="<?php echo set_value('u_email'); ?>"/></td>
+					<td style="width:300px; text-align:left"><input class="form-control" type="text" style="width:270px" name="u_email" value="<?php echo set_value('u_email'); ?>"/></td>
 					<td style="text-align:left"><font color="#D22325"><?php echo form_error('u_email'); ?></font></td>
 				</tr>
 				<tr><td colspan="3">&nbsp;</td></tr>
-				<tr><td colspan="3" style="text-align:center;"><input style="width:150px" type="submit" name="save" value="Reset Password"></td></tr>
+				<tr><td colspan="3" style="text-align:center;"><input  class="btn btn-primary" style="width:150px" type="submit" name="save" value="Reset Password"></td></tr>
             </table>
         </form>
     </div>
 </div>
+
 <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+
 </body>
 </html>
