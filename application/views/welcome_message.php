@@ -105,7 +105,7 @@
     <label>
       <input type="checkbox"> Remember me
 
-      <a href="<?php echo base_url(); ?>index.php/user/forgot_password" >Forgott password?</a>
+      <a href="<?php echo base_url(); ?>index.php/user/forgot_password" >Forgot password?</a>
 
 
 

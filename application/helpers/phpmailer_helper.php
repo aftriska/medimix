@@ -8,7 +8,7 @@ function send_email($recipient, $sender, $subject, $message)
     $body = $message;
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = false;
     $mail->SMTPSecure = 'tls';
     $mail->Host     = "smtp.gmail.com"; // SMTP servers
     $mail->Port     = 587;
