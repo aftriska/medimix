@@ -103,6 +103,8 @@ class My_disease extends CI_Controller {
 				$data['success_msg'] = "Your data has been updated.";
 			}
         }
+        elseif($this->input->post('cancel_btn'))
+		{ redirect('/my_disease'); }
         
         $data['menu'] = 'menu';
 		$data['body'] = 'my_disease_delete';

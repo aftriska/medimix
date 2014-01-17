@@ -116,6 +116,8 @@ class My_medication extends CI_Controller {
 				$data['success_msg'] = "Your data has been updated.";
 			}
         }
+         elseif($this->input->post('cancel_btn'))
+		{ redirect('/my_medication'); }
         
         $data['menu'] = 'menu';
 		$data['body'] = 'my_medication_delete';

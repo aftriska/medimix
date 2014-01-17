@@ -7,9 +7,9 @@
         <p class="lead">This the page page shows the information for the normal user. For premium user there will be menu for Data Management.</p>
       </div>
 
-<table>
+<table cellpadding="10" cellspacing="10">
 	<tr>
-		<td>
+		<td style="width:200px" valign="top">
 			<!-- to display disease -->
 			<?php if($diseases->num_rows() === 0) { ?>
 			No Record.
@@ -21,7 +21,7 @@
 			</form>
 			<?php endforeach; } ?>
 		</td>
-		<td>
+		<td style="width:200px" valign="top">
 			<!-- to display side-effect of the selected disease -->
 			<?php if($side_effects === null) { ?>
 			Choose Disease.
@@ -36,7 +36,7 @@
 			</form>
 			<?php endforeach; } ?>
 		</td>
-		<td>
+		<td style="width:200px" valign="top">
 			<!-- to display suggestions of the selected disease and side-effect -->
 			<?php if($suggestion === null) { ?>
 			Choose Side Effect.

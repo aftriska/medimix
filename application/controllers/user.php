@@ -306,6 +306,8 @@ class User extends CI_Controller {
 				}
 			}
         }
+        elseif($this->input->post('cancel_btn'))
+		{ redirect('/user'); }
         else
         {
         	$data['validation'] = null;

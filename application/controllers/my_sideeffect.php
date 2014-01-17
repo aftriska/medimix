@@ -100,6 +100,8 @@ class My_sideeffect extends CI_Controller {
 				$data['success_msg'] = "Your data has been updated.";
 			}
         }
+         elseif($this->input->post('cancel_btn'))
+		{ redirect('/my_sideeffect'); }
         
         $data['menu'] = 'menu';
 		$data['body'] = 'my_sideeffect_delete';

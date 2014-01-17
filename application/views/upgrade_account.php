@@ -24,7 +24,7 @@
         <?php } ?>
     });
 </script>
-
+<br/><br/>
 <p>Upgrade Your Account to Premium User!</p>
 <p>You will be able to record your data. Your data is confidential and will not be opened for third parties.</p>
 <form action="<?php echo base_url(); ?>index.php/user/upgrade_account" method="post">

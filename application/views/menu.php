@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">MediaMix</a>
+          <a class="navbar-brand" href="#">MediMix</a>
         </div>
  
  <div class="collapse navbar-collapse">
@@ -31,7 +31,7 @@
 <?php if($utype->row()->u_type === '1') { ?>
 <li><a href="<?php echo base_url(); ?>index.php/my_disease">MY DISEASE</a></li>
 <li><a href="<?php echo base_url(); ?>index.php/my_medication">MY MEDICATION</a></li>
-<li><a href="<?php echo base_url(); ?>index.php/my_sideeffect">RERPORT SIDE EFFECT</a></li></li>
+<li><a href="<?php echo base_url(); ?>index.php/my_sideeffect">REPORT SIDE EFFECT</a></li></li>
 <?php }?>
 
       </ul>
