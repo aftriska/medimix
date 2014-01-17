@@ -4,7 +4,7 @@ class Registration extends CI_Controller {
 
 	public function index()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict(TRUE);
 		$this->load->model('registration_model');
 		//$this->load->helper('mm_date_helper');

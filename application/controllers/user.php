@@ -4,7 +4,7 @@ class User extends CI_Controller {
 
 	public function index()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 
@@ -50,7 +50,7 @@ class User extends CI_Controller {
 	
 	public function login()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict(TRUE);
 
 		$this->form_validation->set_rules('u_username', 'Username', 'required|trim|xss_clean|alpha_numeric');
@@ -99,7 +99,7 @@ class User extends CI_Controller {
 	
 	function change_password()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 
@@ -158,7 +158,7 @@ class User extends CI_Controller {
 	
 	function forgot_password()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict(TRUE);
 		
 		$this->form_validation->set_rules('u_email', 'e-Mail', 'required|valid_email');
@@ -224,7 +224,7 @@ class User extends CI_Controller {
 	
 	function edit_profile()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 		$this->load->helper('mm_string_helper');
@@ -319,7 +319,7 @@ class User extends CI_Controller {
 	
 	function upgrade_account()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 		

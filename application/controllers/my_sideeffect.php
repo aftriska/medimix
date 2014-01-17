@@ -4,7 +4,7 @@ class My_sideeffect extends CI_Controller {
 
 	public function index()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 		$this->load->model('disease_model');
@@ -58,7 +58,7 @@ class My_sideeffect extends CI_Controller {
 	
 	function delete()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 		$this->load->model('disease_model');
@@ -109,7 +109,7 @@ class My_sideeffect extends CI_Controller {
 	
 	function edit()
 	{
-		$this->output->enable_profiler(TRUE);
+		//$this->output->enable_profiler(TRUE);
 		$this->auth->restrict();
 		$this->load->model('user_model');
 		$this->load->model('disease_model');
